@@ -1,0 +1,816 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Booking Management",
+    "contact": {}
+  },
+  "host": "localhost:8080",
+  "basePath": "/api",
+  "securityDefinitions": {},
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "summary": "register",
+        "tags": [
+          "user"
+        ],
+        "operationId": "register",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/registerrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/auth/verify-email": {
+      "post": {
+        "summary": "verify Email",
+        "tags": [
+          "user"
+        ],
+        "operationId": "verifyEmail",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/verifyEmailRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "login",
+        "tags": [
+          "user"
+        ],
+        "operationId": "login",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/loginrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/home/profile/17": {
+      "get": {
+        "summary": "UserProfile",
+        "tags": [
+          "user"
+        ],
+        "operationId": "UserProfile",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/home/reset-password": {
+      "post": {
+        "summary": "reset password",
+        "tags": [
+          "user"
+        ],
+        "operationId": "resetpassword",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/resetpasswordrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/packages": {
+      "get": {
+        "summary": "AllPackageList",
+        "tags": [
+          "Package"
+        ],
+        "operationId": "AllPackageList",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "CreatePackage",
+        "tags": [
+          "Package"
+        ],
+        "operationId": "CreatePackage",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreatePackageRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/packages/1": {
+      "get": {
+        "summary": "PackageById",
+        "tags": [
+          "Package"
+        ],
+        "operationId": "PackageById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/packages/8": {
+      "put": {
+        "summary": "UpdatePackage",
+        "tags": [
+          "Package"
+        ],
+        "operationId": "UpdatePackage",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdatePackageRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/classes": {
+      "get": {
+        "summary": "AllClassList",
+        "tags": [
+          "Class"
+        ],
+        "operationId": "AllClassList",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "CreateClass",
+        "tags": [
+          "Class"
+        ],
+        "operationId": "CreateClass",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateClassRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/classes/1": {
+      "get": {
+        "summary": "ClassListById",
+        "tags": [
+          "Class"
+        ],
+        "operationId": "ClassListById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/classes/6": {
+      "put": {
+        "summary": "UpdateClass",
+        "tags": [
+          "Class"
+        ],
+        "operationId": "UpdateClass",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateClassRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/home": {
+      "get": {
+        "summary": "PackageListByUser",
+        "tags": [
+          "Home"
+        ],
+        "operationId": "PackageListByUser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/home/17/purchase/8": {
+      "post": {
+        "summary": "UserBuyPackage",
+        "tags": [
+          "PurchasePackage"
+        ],
+        "operationId": "UserBuyPackage",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/booking/17/booking/6": {
+      "post": {
+        "summary": "BookClassByUser",
+        "tags": [
+          "Booking"
+        ],
+        "operationId": "BookClassByUser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/booking/17/booking/13/cancel": {
+      "post": {
+        "summary": "BookingCancel",
+        "tags": [
+          "Booking"
+        ],
+        "operationId": "BookingCancel",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "definitions": {
+    "registerrequest": {
+      "title": "registerrequest",
+      "example": {
+        "email": "maynine@gmail.com",
+        "password": "admin@123",
+        "country": {
+          "id": 1
+        }
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        }
+      },
+      "required": [
+        "email",
+        "password",
+        "country"
+      ]
+    },
+    "Country": {
+      "title": "Country",
+      "example": {
+        "id": 1
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "verifyEmailRequest": {
+      "title": "verifyEmailRequest",
+      "example": {
+        "email": "maynine@gmail.com",
+        "password": "admin@123"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "loginrequest": {
+      "title": "loginrequest",
+      "example": {
+        "email": "maynine@gmail.com",
+        "password": "admin@123"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "resetpasswordrequest": {
+      "title": "resetpasswordrequest",
+      "example": {
+        "email": "maynine@gmail.com",
+        "password": "1234567"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "CreatePackageRequest": {
+      "title": "CreatePackageRequest",
+      "example": {
+        "packageName": "Premium Package Malay",
+        "credit": 5,
+        "price": 20,
+        "description": "5 credits for Singapore",
+        "expireDate": "2024-10-31T17:30:00.000+00:00",
+        "country": {
+          "id": 3
+        }
+      },
+      "type": "object",
+      "properties": {
+        "packageName": {
+          "type": "string"
+        },
+        "credit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "price": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "description": {
+          "type": "string"
+        },
+        "expireDate": {
+          "type": "string"
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        }
+      },
+      "required": [
+        "packageName",
+        "credit",
+        "price",
+        "description",
+        "expireDate",
+        "country"
+      ]
+    },
+    "UpdatePackageRequest": {
+      "title": "UpdatePackageRequest",
+      "example": {
+        "packageName": "Premium Package Myanmar22",
+        "credit": 5,
+        "price": 20,
+        "description": "5 credits for Singapore",
+        "expireDate": "2024-10-31T17:30:00.000+00:00",
+        "country": {
+          "id": 3
+        }
+      },
+      "type": "object",
+      "properties": {
+        "packageName": {
+          "type": "string"
+        },
+        "credit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "price": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "description": {
+          "type": "string"
+        },
+        "expireDate": {
+          "type": "string"
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        }
+      },
+      "required": [
+        "packageName",
+        "credit",
+        "price",
+        "description",
+        "expireDate",
+        "country"
+      ]
+    },
+    "CreateClassRequest": {
+      "title": "CreateClassRequest",
+      "example": {
+        "className": "Intermdiate Class 1 hr Malay",
+        "requiredCredit": 1,
+        "startDate": "2024-11-12",
+        "endDate": "2024-11-12",
+        "availableSlots": 5,
+        "maxSlots": 3,
+        "packaged": {
+          "id": 8
+        }
+      },
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string"
+        },
+        "requiredCredit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "availableSlots": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxSlots": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "packaged": {
+          "$ref": "#/definitions/Packaged"
+        }
+      },
+      "required": [
+        "className",
+        "requiredCredit",
+        "startDate",
+        "endDate",
+        "availableSlots",
+        "maxSlots",
+        "packaged"
+      ]
+    },
+    "Packaged": {
+      "title": "Packaged",
+      "example": {
+        "id": 8
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "UpdateClassRequest": {
+      "title": "UpdateClassRequest",
+      "example": {
+        "className": "Intermdiate Class 1 hr Malay",
+        "requiredCredit": 1,
+        "startDate": "2024-11-12",
+        "endDate": "2024-11-12",
+        "availableSlots": 5,
+        "maxSlots": 3,
+        "packaged": {
+          "id": 8
+        }
+      },
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string"
+        },
+        "requiredCredit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "availableSlots": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxSlots": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "packaged": {
+          "$ref": "#/definitions/Packaged"
+        }
+      },
+      "required": [
+        "className",
+        "requiredCredit",
+        "startDate",
+        "endDate",
+        "availableSlots",
+        "maxSlots",
+        "packaged"
+      ]
+    }
+  },
+  "security": [],
+  "tags": [
+    {
+      "name": "user"
+    },
+    {
+      "name": "Package"
+    },
+    {
+      "name": "Class"
+    },
+    {
+      "name": "Home"
+    },
+    {
+      "name": "PurchasePackage"
+    },
+    {
+      "name": "Booking"
+    }
+  ]
+}
